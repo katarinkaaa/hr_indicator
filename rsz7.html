@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кадровый индикатор | Московская ДМ</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f8f8;
+            padding: 0;
+            position: relative;
+            display: flex;
+            min-height: 100vh;
+        }
+        
+        .red-border-top {
+            position: fixed;
+            top: 0;
+            left: 200px;
+            right: 0;
+            height: 20px;
+            background-color: #d32f2f;
+            z-index: 100;
+        }
+        
+        .red-sidebar {
+            width: 200px;
+            background-color: #d32f2f;
+            padding: 20px 15px;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 90;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .sidebar-back-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 110;
+        }
+        
+        .sidebar-header {
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 15px 10px;
+            margin: 15px 0 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            text-align: center;
+            position: relative;
+        }
+        
+        .sidebar-buttons {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+        }
+        
+        .sidebar-button {
+            display: block;
+            width: 100%;
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            background-color: rgba(255,255,255,0.2);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: left;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-decoration: none;
+        }
+        
+        .sidebar-button:hover {
+            background-color: rgba(255,255,255,0.3);
+        }
+        
+        .dashboard {
+            flex: 1;
+            margin: 40px 20px 20px 220px;
+            padding: 20px;
+            position: relative;
+            max-width: 800px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .page-header {
+            color: #d32f2f;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .content-section {
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        
+        .info-card {
+            background-color: #f5f5f5;
+            border-radius: 6px;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-left: 4px solid #d32f2f;
+        }
+        
+        .info-card-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #d32f2f;
+        }
+        
+        .info-card-content {
+            color: #555;
+            line-height: 1.5;
+        }
+        
+        .action-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #d32f2f;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-decoration: none;
+            margin-top: 10px;
+        }
+        
+        .action-button:hover {
+            background-color: #b71c1c;
+        }
+    </style>
+</head>
+<body>
+    <div class="red-sidebar">
+        <button class="sidebar-back-button">←</button>
+        <div class="sidebar-header">Московская ДМ</div>
+        <div class="sidebar-buttons">
+            <a href="rsz1.html" class="sidebar-button">РСЗ 1</a>
+            <a href="rsz2.html" class="sidebar-button">РСЗ 2</a>
+            <a href="rsz3.html" class="sidebar-button">РСЗ 3</a>
+            <a href="rsz4.html" class="sidebar-button">РСЗ 4</a>
+            <a href="rsz5.html" class="sidebar-button">РСЗ 5</a>
+            <a href="rsz6.html" class="sidebar-button">РСЗ 6</a>
+            <a href="rsz7.html" class="sidebar-button">РСЗ 7</a>
+            <a href="rsz8.html" class="sidebar-button">РСЗ 8</a>
+            <a href="rsz9.html" class="sidebar-button">РСЗ 9</a>
+            <a href="rsz10.html" class="sidebar-button">РСЗ 10</a>
+            <a href="rsz11.html" class="sidebar-button">РСЗ 11</a>
+            <a href="rsz12.html" class="sidebar-button">РСЗ 12</a>
+            <a href="rsz13.html" class="sidebar-button">РСЗ 13</a>
+            <a href="rsz14.html" class="sidebar-button">РСЗ 14</a>
+            <a href="rsz15.html" class="sidebar-button">РСЗ 15</a>
+            <a href="rsz16.html" class="sidebar-button">РСЗ 16</a>
+            <a href="rsz17.html" class="sidebar-button">РСЗ 17</a>
+            <a href="rsz18.html" class="sidebar-button">РСЗ 18</a>
+            <a href="rsz19.html" class="sidebar-button">РСЗ 19</a>
+            <a href="rsz20.html" class="sidebar-button">РСЗ 20</a>
+            <a href="rsz21.html" class="sidebar-button">РСЗ 21</a>
+            <a href="rsz22.html" class="sidebar-button">РСЗ 22</a>
+            <a href="rsz23.html" class="sidebar-button">РСЗ 23</a>
+            <a href="rsz24.html" class="sidebar-button">РСЗ 24</a>
+            <a href="rsz25.html" class="sidebar-button">РСЗ 25</a>
+            <a href="rsz26.html" class="sidebar-button">РСЗ 26</a>
+            <a href="rsz27.html" class="sidebar-button">РСЗ 27</a>
+            <a href="rsz28.html" class="sidebar-button">РСЗ 28</a>
+            <a href="rsz29.html" class="sidebar-button">РСЗ 29</a>
+            <a href="rsz30.html" class="sidebar-button">РСЗ 30</a>
+            <a href="rsz31.html" class="sidebar-button">РСЗ 31</a>
+        </div>
+    </div>
+    
+    <div class="red-border-top"></div>
+    
+    <div class="dashboard">
+        <h1 class="page-header">Графики оценки компетенций</h1>
+        
+        <div class="content-section">
+            <h2 class="section-title">Общая информация</h2>
+            <div class="info-card">
+                <div class="info-card-title">До этой кнопки программисты пока не добрались</div>
+                <div class="info-card-content">
+                    Эта страница находится в разработке. Мы работаем над тем, чтобы вскоре предоставить вам полный функционал.
+                </div>
+                <button class="action-button">Вернуться назад</button>
+            </div>
+        </div>
+        
+        </div>
+    </div>
+
+    <script>
+        // Обработчик для кнопки "Назад"
+        document.querySelector('.sidebar-back-button').addEventListener('click', function() {
+            window.history.back();
+        });
+        
+        // Обработчик для кнопки действия
+        document.querySelector('.action-button').addEventListener('click', function() {
+            window.history.back();
+        });
+    </script>
+</body>
+</html>
